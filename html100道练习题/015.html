@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			#box2 {
+				margin: 20px 0;
+				width: 100px;
+				height: 200px;
+				align-items: center;
+				line-height: 200px;
+				font-size: 20px;
+				color: beige;
+				background-color: #A52A2A;
+			}
+
+			input {
+				margin: 30px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第15关</span>
+			<span>下面红色区域住着一只怪物，上面是他的血条，请尝试修改血条的某个属性清空血条以干掉怪物，已知血条的标签为meter，请在下面输入框中输入想要修改的属性和对应的属性值(请勿输入空格)</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="请输入属性和属性值" />
+			<div>
+				1<meter id="m_1" max="10" min="0" value="9" high="10" low="5"></meter>10
+			</div>
+			<div id="box2">monster</div>
+			<a id="a_1" href="016.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /value="0"|value='0'/ig;
+			const reg2 = /min/ig;
+			const reg3 = /max/ig;
+			const input_2 = document.getElementById("input_2");
+			const a_1 = document.getElementById("a_1");
+			const m_1 = document.getElementById("m_1");
+			function setAttr() {
+				if (!(input_2.value.search(reg2) === -1)) {
+					alert("你正在尝试修改血量下限，此时怪物杀死了你！")
+				} else if (!(input_2.value.search(reg3) === -1)) {
+					alert("你正在尝试修改血量上限，此时怪物杀死了你！");
+				} else if (!(input_2.value.search(reg) === -1)) {
+						m_1.value = input_2.value[7];
+						a_1.hidden = null;
+				};
+			}
+			setInterval(setAttr, 300);
+		</script>
+	</body>
+</html>

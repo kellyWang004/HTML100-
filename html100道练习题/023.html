@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+
+			#f_1 :nth-child(3) {
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第23关</span>
+			<span>请在下面的电话号输入框输入“12345678901”并提交，如果提示格式不对请修改号码输入框的验证模式（即正则表达式），直到能正常提交，在下面输入框中键入要修改的属性和属性值（请勿键入空格）</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="请输入属性" />
+			<input type="text" name="" id="input_6" spellcheck="false" placeholder="请输入属性值，不带引号" />
+			<form action="localhost:8848" method="get" id="f_1">
+				<label form="input_3">电话号</label>
+				<input type="text" name="123" id="input_3" required="required" pattern="[@]" title="缺少“@”" />
+				<input type="submit" value="submit" />
+			</form>
+			<a id="a_1" href="024.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /pattern/ig;
+			const input_2 = document.getElementById("input_2");
+			const a_1 = document.getElementById("a_1");
+			const input_5 = document.querySelector("form :nth-child(2)");
+			const input_4 = document.querySelector("form :nth-child(3)");
+			const input_6 = document.getElementById("input_6");
+			input_4.onclick = function() {
+				if (!(input_2.value.search(reg) === -1)) {
+						input_5.pattern = input_6.value;
+					const reg1 = new RegExp(input_5.pattern, "ig");
+					if (!(input_5.value.search(reg1) === -1)) {
+						alert("提交成功");
+						a_1.hidden = null;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+
+			#f_1 :nth-child(3) {
+				width: 60px;
+			}
+
+			textarea {
+				width: 600px;
+				height: 200px;
+			}
+
+			a {
+				margin-top: 40px;
+			}
+			#box2{
+				width: 200px;
+				display: flex;
+				flex-flow: row nowrap;
+				text-align: center;
+				line-height: 29px;
+			}
+			#box2 :nth-child(1){
+				width: 29px;
+				display: flex;
+				flex-flow: row nowrap;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第041关</span>
+			<span>请问“我同意此协议”后面的单选框设置了什么属性，导致你无法选中它？请在第二个输入框中输入该属性的新值使其可以被选中(该值是利用DOM更改，而不是直接修改便签中的该属性值)</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入属性名" />
+			<input type="text" name="" id="input_3" spellcheck="false" placeholder="输入属性值" />
+			<div id="box2">
+				我同意此协议<input type="radio" name="112" id="input_4" value="" disabled="" />
+			</div>
+			<a id="a_1" href="042.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /disabled|null|false/ig;
+			const input_2 = document.getElementById("input_2");
+			const input_3 = document.getElementById("input_3");
+			const input_4 = document.getElementById("input_4");
+			const a_1 = document.getElementById("a_1");
+			function Atrr2(){
+				if (!(input_2.value.search(reg) === -1) && !(input_3.value.search(reg) === -1) ) {
+					input_4.disabled = false;
+					clearInterval(bc);
+					a_1.hidden = null;
+				}
+			}
+			let bc = setInterval(Atrr2,300);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+			a {
+				margin-top: 40px;
+			}
+			#forEx{
+				padding: 10px;
+				width: 340px;
+				border: #000000 1px solid;
+			}
+			#forEx span{
+				margin: 0px;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				padding-right: 10px;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第059关</span>
+			<span>上一关的个输入框类型</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="请直接点击下一关" />
+			<div id="forEx">
+<span>1、datetime<input type="datetime" name="" id="" value="" /></span>
+<span>2、text<input type="text" name="" id="" value="" /></span>
+<span>3、email<input type="email" name="" id="" value="" /></span>
+<span>4、url<input type="url" name="" id="" value="" /></span>
+<span>5、search<input type="search" name="" id="input_3" ></span>
+<span>6、tel<input type="tel" name="" id="" value="" /></span>
+<span>7、datetime-local<input type="datetime-local" name="" id="" value="" /></span>
+<span>8、time<input type="time" name="" id="" value="" /></span>
+<span>9、week<input type="week" name="" id="" value="" /></span>
+			</div>
+			<span hidden="hidden">用search的方便之处就是为了使输入框后面有一个小叉，能一键清空已经输入的字符</span>
+			<a id="a_1" href="060.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /|/ig;
+			const input_2 = document.getElementById("input_2");
+			const a_1 = document.getElementById("a_1");
+			function Atrr2(){
+				if (!(input_2.value.search(reg) === -1)) {
+					clearInterval(bc);
+					a_1.hidden = null;
+				}
+			}
+			let bc = setInterval(Atrr2,300);
+		</script>
+	</body>
+</html>

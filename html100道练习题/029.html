@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+
+			#f_1 :nth-child(3) {
+				width: 60px;
+			}
+			#box :nth-child(4){
+				border: #000000 solid 1px;
+			}
+			textarea{
+				width: 600px;
+				height: 200px;
+			}
+			a{
+				margin-top: 40px;
+			}
+			select{
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第29关</span>
+			<span>请查看下面选择框，请问“男嘉宾组”和“女嘉宾组”这八个字属于哪个标签的哪个属性？（请勿键入空格）</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="标签名（不要尖括号）"/>
+			<input type="text" name="" id="input_3" spellcheck="false" placeholder="属性名"/>
+			<select name="female">
+				<optgroup label="男嘉宾组">
+					<option value ="1">一号男嘉宾</option>
+					<option value ="2">二号男嘉宾</option>
+					<option value ="3">三号男嘉宾</option>
+				</optgroup>
+				<optgroup label="女嘉宾组">
+					<option value="1">一号女嘉宾</option>
+					<option value="2">二号女嘉宾</option>
+					<option value="3">三号女嘉宾</option>
+				</optgroup>
+			</select>
+
+			<a id="a_1" href="030.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /optgroup|label/ig;
+			const input_2 = document.getElementById("input_2");
+			const input_3 = document.getElementById("input_3");
+			const a_1 = document.getElementById("a_1");
+			function Atrr(){
+				if (!(input_2.value.search(reg) === -1) && !(input_3.value.search(reg) === -1)) {
+					clearInterval(bc);
+					a_1.hidden = null;
+				}
+			}
+			let bc = setInterval(Atrr,300);
+		</script>
+	</body>
+</html>

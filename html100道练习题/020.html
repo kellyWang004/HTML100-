@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 30px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第20关</span>
+			<span>请给下面输入框添加一个自动完成的属性，并将属性和属性值键入输入框中(请勿输入空格)</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="请输入属性和属性值" />
+			<a id="a_1" href="021.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+		const reg = /autocomplete="on"|autocomplete='on'/ig;
+			const input_2 = document.getElementById("input_2");
+			const a_1 = document.getElementById("a_1");
+			function setAttr() {
+				if (!(input_2.value.search(reg) === -1)) {
+					clearInterval(bc);
+					alert("自动完成属性添加成功");
+					a_1.hidden = null;
+				};
+			}
+			let bc = setInterval(setAttr, 300);
+		</script>
+	</body>
+</html>

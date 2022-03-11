@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+			span {
+				margin-top: 10px;
+				line-height: 25px;
+			}
+			#f_1 :nth-child(3) {
+				width: 60px;
+			}
+			#box2{
+				display: flex;
+				align-items: flex-start;
+				flex-flow: column nowrap;
+			}
+			#box2 span{
+				width: 320px;
+				display: flex;
+				justify-content: space-between;
+			}
+			span>a{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第60关</span>
+			<span>下列哪些属性对于textarea标签是有意义的？</span>
+			<div id="box2">
+				<span>1、form<input type="checkbox" name="" id="input_1" spellcheck="false"/></span>
+				<span>2、maxlength<input type="checkbox" name="" id="input_2" spellcheck="false"/></span>
+				<span>3、readonly<input type="checkbox" name="" id="input_3" spellcheck="false"/></span>
+				<span>4、required<input type="checkbox" name="" id="input_4" spellcheck="false"/></span>
+				<span>5、wrap<input type="checkbox" name="" id="input_5" spellcheck="false"/></span>
+				<span>6、type<input type="checkbox" name="" id="input_6" spellcheck="false"/></span>
+				<span>7、cols、rows<input type="checkbox" name="" id="input_7" spellcheck="false"/></span>
+			</div>
+			<span>提示：wrap表示表单提交时是否提交文本里的回车键，hard提交，soft不提交。</span>
+			<a id="a_1" href="061.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const input_1 = document.getElementById("input_1");
+			const input_2 = document.getElementById("input_2");
+			const input_3 = document.getElementById("input_3");
+			const input_4 = document.getElementById("input_4");
+			const input_5 = document.getElementById("input_5");
+			const input_6 = document.getElementById("input_6");
+			const input_7 = document.getElementById("input_7");
+			const a_1 = document.getElementById("a_1");
+			function Atrr(){
+				if (input_1.checked === true && input_2.checked === true && input_3.checked === true && input_4.checked === true && input_5.checked === true && input_6.checked === false && input_7.checked === true) {
+					clearInterval(bc);
+					a_1.hidden = null;
+				}
+			}
+			let bc = setInterval(Atrr,300);
+		</script>
+	</body>
+</html>

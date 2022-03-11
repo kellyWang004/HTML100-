@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+
+			span {
+				margin-top: 30px;
+				line-height: 25px;
+			}
+			a {
+				margin-top: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第048关</span>
+			<span>请问input标签中哪个属性表示输入的字符允许的最大长度？</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入type属性值" />
+			<a id="a_1" href="049.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /maxlength/ig;
+			const input_2 = document.getElementById("input_2");
+			const a_1 = document.getElementById("a_1");
+			function Atrr2(){
+				if (!(input_2.value.search(reg) === -1)) {
+					clearInterval(bc);
+					a_1.hidden = null;
+				}
+			}
+			let bc = setInterval(Atrr2,300);
+		</script>
+	</body>
+</html>

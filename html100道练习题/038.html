@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="000.css" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<style type="text/css">
+			#box {
+				position: relative;
+				z-index: 1;
+				padding: 10%;
+				background-color: antiquewhite;
+				display: flex;
+				flex-flow: column nowrap;
+				text-align: center;
+				align-items: center;
+			}
+
+			input {
+				margin: 10px 0px;
+				width: 200px;
+			}
+			span {
+				margin: 15px 0px;
+				line-height: 25px;
+			}
+
+			#f_1 :nth-child(3) {
+				width: 60px;
+			}
+
+			textarea {
+				width: 600px;
+				height: 200px;
+			}
+
+			a {
+				margin-top: 40px;
+			}
+			#swicth{
+				width: 200px;
+				line-height: 30px;
+				display: flex;
+				flex-flow: row nowrap;
+			}
+			#swicth input{
+				width: 30px;
+				display: flex;
+				margin-right: 37px;
+				flex-flow: row nowrap;
+			}
+			#light{
+				margin-top: 50px;
+				width: 100px;
+				height: 100px;
+				background-color: white;
+			}
+			.ss{
+				display: inline-block;
+				width: 90px;
+				border: #000000 1px solid;
+			}
+			label{
+				user-seletct: none;
+				-webkit-user-seletct: none;
+				-moz-user-seletct: none;
+				-ms-user-seletct: none
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>第038关</span>
+			<span>依旧使用这一个场景，请尝试点击“红灯”二字和“绿灯”二字，已知“红灯”和“绿灯”所在的标签都是label标签，
+			而点击绿灯无法选中复选框的原因是因为“绿灯”所属的label标签的<span id="s1" class="ss" contenteditable="true"></span>
+			属性和绿灯对应的复选框的<span id="s2" class="ss" contenteditable="true"></span>属性的值不一致造成的（两个空均填属性名，勿键入空格）</span>
+			<div id="swicth">
+				<label for="red">红灯</label>
+				<input type="checkbox" name="12" id="red" value="" />
+				<label for="">绿灯</label>
+				<input type="checkbox" name="12" id="green" value="" />
+			</div>
+			<div id="light"></div>
+			<a id="a_1" href="039.html" accesskey="" hidden="hidden">下一关</a>
+		</div>
+		<script type="text/javascript">
+			const reg = /x/;
+			const s1 = document.getElementById("s1");
+			const s2 = document.getElementById("s2");
+			const a_1 = document.getElementById("a_1");
+			const red = document.getElementById("red");
+			const green = document.getElementById("green");
+			const light = document.getElementById("light");
+			red.onclick = function(){
+				Atrr();
+			};
+			green.onclick = function(){
+				Atrr();
+			};
+			function Atrr() {
+				if (red.checked === true && green.checked === false) {
+					light.style.backgroundColor = "red";
+				}else if (green.checked === true && red.checked === false) {
+					light.style.backgroundColor = "green";
+				}else if(green.checked === true && red.checked === true){
+					light.style.backgroundColor = "rgb(103,75,0)";
+				}else{
+					light.style.backgroundColor = "#ffffff";
+				};
+			}
+			function Atrr2(){
+				if (s1.innerHTML === "for" && s2.innerHTML === "id") {
+					clearInterval(bc);
+					a_1.hidden = null;
+				};
+			}
+			let bc = setInterval(Atrr2,300);
+		</script>
+	</body>
+</html>
