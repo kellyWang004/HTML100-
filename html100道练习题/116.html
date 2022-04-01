@@ -53,30 +53,29 @@
 	</head>
 	<body>
 		<div id="box">
-			<span>第75关</span>
-			<span>em、strong、dfn、code、samp、kbd、var、cite 以上标签是短语标签，都具有确切的语义，
-下面是它们的解释，请将每个标签对应解释的序号按顺序填在输入框中，数字之间英文逗号隔开。</span>
+			<span>第116关</span>
+			<span>screen、tty、tv、projection、handheld、print、braille、aural、all以上属性值都是media的属性，请按顺序将所有属性值对应的解释前面的序号填在输入框中，英文逗号隔开。</span>
 			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入序号数字" />
 			<span id="explain"></span>
-			<a id="a_1" href="076.html" accesskey="" hidden="hidden">下一关</a>
+			<a id="a_1" href="117.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
 			const input_2 = document.getElementById("input_2");
 			const a_1 = document.getElementById("a_1");
 			const span_explain = document.getElementById("explain");
-			
 			// 创建答案数组
 			let answer_arr =[];
-			let temp = [1,2,3,4,5,6,7,8];
+			let temp = [1,2,3,4,5,6,7,8,9];
 			// 随机排序
-			let explain_arr = ["把文本定义为强调的内容<br/>",
-			"把文本定义为语气更强的强调的内容。<br/>",
-			"定义一个定义项目。（不常用）<br/>",
-			"定义计算机代码文本。<br/>",
-			"定义样本文本。<br/>",
-			"定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。<br/>",
-			"定义变量。您可以将此标签与pre及code标签配合使用。<br/>",
-			"定义引用。可使用该标签对参考文献的引用进行定义，比如书籍或杂志的标题。<br/>"];
+			let explain_arr = ["计算机屏幕（默认值）。<br/>",
+			"电传打字机以及使用等宽字符网格的类似媒介。<br/>",
+			"电视类型设备（低分辨率、有限的屏幕翻滚能力）。<br/>",
+			"放映机。<br/>",
+			"手持设备（小屏幕、有限的带宽）。<br/>",
+			"打印预览模式 / 打印页。<br/>",
+			"盲人用点字法反馈设备。<br/>",
+			"语音合成器。<br/>",
+			"所有设备。<br/>"];
 			// 对数组随机排序的函数
 			function sortPlus (arr,arr2) {
 				for(let i = 0;i<arr.length;i++){

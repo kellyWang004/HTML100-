@@ -45,22 +45,28 @@
 			form input{
 				width: 160px;
 			}
+			iframe{
+				margin: 1rem 0;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="box">
-			<span>第87关</span>
-			<span>u标签用于定义下划线文本，它是哪个单词的缩写？</span>
-			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入单词" />
-			<a id="a_1" href="088.html" accesskey="" hidden="hidden">下一关</a>
+			<span>第96关</span>
+			<span>iframe标签用于定义内联框架，该标签哪个属性设置是否有滚动条？</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入属性名" />
+			<iframe src="https://www.bilibili.com"" width="300" height="300" ></iframe>
+			<a id="a_1" href="097.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
-			const reg = /underline/ig;
+			const reg = /scrolling/ig;
 			const input_2 = document.getElementById("input_2");
+			const iframe = document.querySelector("iframe");
 			const a_1 = document.getElementById("a_1");
 			function Atrr2() {
 				if (!(input_2.value.search(reg) === -1)) {
 					clearInterval(bc);
+					iframe.scrolling = "no";
 					a_1.hidden = null;
 				}
 			}

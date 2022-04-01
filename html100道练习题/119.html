@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="000.css" />
-		<link rel="stylesheet" type="text/css" href="reset.css" />
 		<style type="text/css">
 			*{
 				margin: 0;
@@ -45,19 +44,41 @@
 			form input{
 				width: 160px;
 			}
+			table{
+				border: #0099ff 5px solid;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="box">
-			<span>第94关</span>
-			<span>哪个标签定义不同类型的输出，比如脚本的输出？（我个人认为这个标签也不是很常用，用其他的完全可代替）</span>
-			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入单词" />
-			<a id="a_1" href="095.html" accesskey="" hidden="hidden">下一关</a>
+			<span>第119关</span>
+			<span>表格中还有三个标签，用于给表格的行分组，分成表头、表主体、表脚注，这三个标签虽然不常用，但也需要知道，它们分别是？</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入属性，逗号隔开" />
+			<table border="5px" cellspacing="3px" cellpadding="20px" frame=" hsides">
+				<tr >
+					<th>一班</th>
+					<th>二班</th>
+					<th>三班</th>
+					<th>四班</th>
+					<th>五班</th>
+					<th>六班</th>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>44</td>
+					<td>41</td>
+					<td>45</td>
+					<td>43</td>
+					<td>42</td>
+				</tr>
+			</table>
+			<a id="a_1" href="120.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
-			const reg = /output/ig;
+			const reg = /thead,tbody,tfoot/ig;
 			const input_2 = document.getElementById("input_2");
 			const a_1 = document.getElementById("a_1");
+			const table = document.querySelector("table")
 			function Atrr2() {
 				if (!(input_2.value.search(reg) === -1)) {
 					clearInterval(bc);

@@ -27,6 +27,7 @@
 			}
 
 			span {
+				display: block;
 				margin-top: 30px;
 				line-height: 25px;
 			}
@@ -45,25 +46,66 @@
 			form input{
 				width: 160px;
 			}
+			#explain{
+				text-align: left;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="box">
-			<span>第87关</span>
-			<span>u标签用于定义下划线文本，它是哪个单词的缩写？</span>
-			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入单词" />
-			<a id="a_1" href="088.html" accesskey="" hidden="hidden">下一关</a>
+			<span>第98关</span>
+			<span>autoplay、controls、loop、muted、preload、src以上属性都属于audio标签，它们的功能如下，请按顺序将每个属性所对应的功能描述前面的序号填在答案输入框中，英文逗号隔开。</span>
+			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入序号数字" />
+			<span id="explain"></span>
+			<a id="a_1" href="099.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
-			const reg = /underline/ig;
 			const input_2 = document.getElementById("input_2");
 			const a_1 = document.getElementById("a_1");
+			const span_explain = document.getElementById("explain");
+			// 创建答案数组
+			let answer_arr =[];
+			let temp = [1,2,3,4,5,6];
+			// 随机排序
+			let explain_arr = ["设置该属性，将使音频在准备就绪后马上播放。<br/>",
+			"设置该属性，将想用户显示控件，例如播放按钮。<br/>",
+			"设置该属性，音频将在第一遍播放完毕之后继续循环播放。<br/>",
+			"设置该属性，音频在播放时自动静音。<br/>",
+			"设置该属性，音频在页面加载时进行加载，并预备播放。如果使用 autoplay，则忽略该属性。<br/>",
+			"该属性的属性值表示要播放的音频的 URL。<br/>"];
+			// 对数组随机排序的函数
+			function sortPlus (arr,arr2) {
+				for(let i = 0;i<arr.length;i++){
+					let a = parseInt(Math.random()*arr.length);
+					let temp = arr[a];
+					let temp2 = arr2[a];
+					arr[a] = arr[i];
+					arr[i] = temp;
+					arr2[a] = arr2[i];
+					arr2[i] = temp2;
+				}	
+			}
+			sortPlus(explain_arr,temp);
+			// 根据随机重排的字符串数组，写出标签解释文本的内容
+			for(let i = 0;i < explain_arr.length;i++){
+				span_explain.innerHTML += `${i+1}、` + explain_arr[i] + "\n";
+			};
+			// 根据临时数组计算出答案数组。
+			for(let i = 0;i<temp.length;i++){
+				 answer_arr.push(temp.indexOf(i+1,0)+1);
+			};
+			// 将答案数组转化为字符串
+			let regValue = answer_arr.join();
+			// 定义正则
+			const reg = new RegExp(regValue,"ig");
+			// 答案核对函数
 			function Atrr2() {
 				if (!(input_2.value.search(reg) === -1)) {
 					clearInterval(bc);
 					a_1.hidden = null;
 				}
 			}
+			// 答案核对函数定时执行
 			let bc = setInterval(Atrr2, 300);
 		</script>
 	</body>

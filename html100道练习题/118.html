@@ -53,30 +53,40 @@
 	</head>
 	<body>
 		<div id="box">
-			<span>第75关</span>
-			<span>em、strong、dfn、code、samp、kbd、var、cite 以上标签是短语标签，都具有确切的语义，
-下面是它们的解释，请将每个标签对应解释的序号按顺序填在输入框中，数字之间英文逗号隔开。</span>
+			<span>第1186关</span>
+			<span>header、footer、main、section、article、aside、details、dialog、summary、data以上标签的用途如下，请按顺序将所有标签对应的解释前面的序号填在输入框中，英文逗号隔开。</span>
 			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入序号数字" />
 			<span id="explain"></span>
-			<a id="a_1" href="076.html" accesskey="" hidden="hidden">下一关</a>
+<!-- 			<header>	定义 section 或 page 的页眉。
+			<footer>	定义 section 或 page 的页脚。
+			<main>	定义文档的主要内容。
+			<section>	定义 section。
+			<article>	定义文章。
+			<aside>	定义页面内容之外的内容。
+			<details>	定义元素的细节。
+			<dialog>	定义对话框或窗口。
+			<summary>	为 <details> 元素定义可见的标题。
+			<data>	添加给定内容的机器可读翻译。 -->
+			<a id="a_1" href="119.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
 			const input_2 = document.getElementById("input_2");
 			const a_1 = document.getElementById("a_1");
 			const span_explain = document.getElementById("explain");
-			
 			// 创建答案数组
 			let answer_arr =[];
-			let temp = [1,2,3,4,5,6,7,8];
+			let temp = [1,2,3,4,5,6,7,8,9,10];
 			// 随机排序
-			let explain_arr = ["把文本定义为强调的内容<br/>",
-			"把文本定义为语气更强的强调的内容。<br/>",
-			"定义一个定义项目。（不常用）<br/>",
-			"定义计算机代码文本。<br/>",
-			"定义样本文本。<br/>",
-			"定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。<br/>",
-			"定义变量。您可以将此标签与pre及code标签配合使用。<br/>",
-			"定义引用。可使用该标签对参考文献的引用进行定义，比如书籍或杂志的标题。<br/>"];
+			let explain_arr = ["定义 section 或 page 的页眉。<br/>",
+			"定义 section 或 page 的页脚。<br/>",
+			"定义文档的主要内容。<br/>",
+			"定义文档中的节（section、区段）。<br/>",
+			"定义文章。<br/>",
+			"定义页面内容之外的内容。<br/>",
+			"定义元素的细节。<br/>",
+			"定义对话框或窗口（浏览器默认情况下不支持）。<br/>",
+			"为 details 元素定义可见的标题。<br/>",
+			"添加给定内容的机器可读翻译。<br/>"];
 			// 对数组随机排序的函数
 			function sortPlus (arr,arr2) {
 				for(let i = 0;i<arr.length;i++){
