@@ -53,11 +53,12 @@
 	</head>
 	<body>
 		<div id="box">
-			<span>第118关</span>
-			<span>header、footer、main、section、article、aside、details、dialog、summary、data以上标签的用途如下，请按顺序将所有标签对应的解释前面的序号填在输入框中，英文逗号隔开。</span>
+			<span>第121关</span>
+			<span>meta标签除了用来传递文档编码方式（charset属性）外，还有很多功能，而且通常是通过name/content或http-equiv/content来传递“名/值”这样的组合进而传递对应的信息。
+			常用name的值有：keywords、description、viewport、robots、author、generator、copyright、revisit-after、renderer。他们功能如下，请按顺序将所有name属性值对应的解释前面的序号填在输入框中，英文逗号隔开</span>
 			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入序号数字" />
 			<span id="explain"></span>
-			<a id="a_1" href="119.html" accesskey="" hidden="hidden">下一关</a>
+			<a id="a_1" href="122.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
 			const input_2 = document.getElementById("input_2");
@@ -65,18 +66,17 @@
 			const span_explain = document.getElementById("explain");
 			// 创建答案数组
 			let answer_arr =[];
-			let temp = [1,2,3,4,5,6,7,8,9,10];
+			let temp = [1,2,3,4,5,6,7,8,9];
 			// 随机排序
-			let explain_arr = ["定义 section 或 page 的页眉。<br/>",
-			"定义 section 或 page 的页脚。<br/>",
-			"定义文档的主要内容。<br/>",
-			"定义文档中的节（section、区段）。<br/>",
-			"定义文章。<br/>",
-			"定义页面内容之外的内容。<br/>",
-			"定义元素的细节。<br/>",
-			"定义对话框或窗口（浏览器默认情况下不支持）。<br/>",
-			"为 details 元素定义可见的标题。<br/>",
-			"添加给定内容的机器可读翻译。<br/>"];
+			let explain_arr = ["用于告诉搜索引擎，你网页的关键字（搜索时根据网页关键字来显示搜索结果），content的值即为关键字。<br/>",
+			"用于告诉搜索引擎，你网站的主要内容，描述的实际内容放在content里。<br/>",
+			"制作移动端页面时用。（后面会细说）<br/>",
+			"用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。（后面会细说）<br/>",
+			"用于标注网页作者，作者名放在content里。<br/>",
+			"用于标明网页是什么软件做的，软件名放在content里。。<br/>",
+			"用于标注版权信息。版权信息放在content里。<br/>",
+			"用于告诉搜索引擎爬虫重访时间。content的值为时间，比如'10 days'<br/>",
+			"用于指定双核浏览器默认以何种方式渲染页面。<br/>"];
 			// 对数组随机排序的函数
 			function sortPlus (arr,arr2) {
 				for(let i = 0;i<arr.length;i++){

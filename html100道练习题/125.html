@@ -53,11 +53,11 @@
 	</head>
 	<body>
 		<div id="box">
-			<span>第118关</span>
-			<span>header、footer、main、section、article、aside、details、dialog、summary、data以上标签的用途如下，请按顺序将所有标签对应的解释前面的序号填在输入框中，英文逗号隔开。</span>
+			<span>第125关</span>
+			<span>meta标签的http-equiv属性值为cache-control时，对应的content值如下：no-cache、no-store、public、private、maxage、no-siteapp。他们解释如下，请按顺序将所有content属性值对应的解释前面的序号填在输入框中，英文逗号隔开</span>
 			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入序号数字" />
 			<span id="explain"></span>
-			<a id="a_1" href="119.html" accesskey="" hidden="hidden">下一关</a>
+			<a id="a_1" href="126.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
 			const input_2 = document.getElementById("input_2");
@@ -65,18 +65,14 @@
 			const span_explain = document.getElementById("explain");
 			// 创建答案数组
 			let answer_arr =[];
-			let temp = [1,2,3,4,5,6,7,8,9,10];
+			let temp = [1,2,3,4,5,6];
 			// 随机排序
-			let explain_arr = ["定义 section 或 page 的页眉。<br/>",
-			"定义 section 或 page 的页脚。<br/>",
-			"定义文档的主要内容。<br/>",
-			"定义文档中的节（section、区段）。<br/>",
-			"定义文章。<br/>",
-			"定义页面内容之外的内容。<br/>",
-			"定义元素的细节。<br/>",
-			"定义对话框或窗口（浏览器默认情况下不支持）。<br/>",
-			"为 details 元素定义可见的标题。<br/>",
-			"添加给定内容的机器可读翻译。<br/>"];
+			let explain_arr = ["先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。<br/>",
+			"不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）<br/>",
+			"缓存所有响应，但并非必须。因为max-age也可以做到相同效果。<br/>",
+			"只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）。<br/>",
+			"表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如该值为60表示响应可以再缓存和重用 60 秒。<br/>",
+			"在移动端打开时禁止转码。<br/>"];
 			// 对数组随机排序的函数
 			function sortPlus (arr,arr2) {
 				for(let i = 0;i<arr.length;i++){
@@ -114,4 +110,3 @@
 		</script>
 	</body>
 </html>
-

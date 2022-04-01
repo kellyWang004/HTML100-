@@ -53,11 +53,11 @@
 	</head>
 	<body>
 		<div id="box">
-			<span>第118关</span>
-			<span>header、footer、main、section、article、aside、details、dialog、summary、data以上标签的用途如下，请按顺序将所有标签对应的解释前面的序号填在输入框中，英文逗号隔开。</span>
+			<span>第124关</span>
+			<span>meta标签的http-equiv属性用来设置HTTP的头部，该属性的常用属性值为：content-Type、X-UA-Compatible、cache-control、expires、refresh、Set-Cookie。他们解释如下，请按顺序将所有http-equiv的值对应的解释前面的序号填在输入框中，英文逗号隔开</span>
 			<input type="text" name="" id="input_2" spellcheck="false" placeholder="输入序号数字" />
 			<span id="explain"></span>
-			<a id="a_1" href="119.html" accesskey="" hidden="hidden">下一关</a>
+			<a id="a_1" href="125.html" accesskey="" hidden="hidden">下一关</a>
 		</div>
 		<script type="text/javascript">
 			const input_2 = document.getElementById("input_2");
@@ -65,18 +65,14 @@
 			const span_explain = document.getElementById("explain");
 			// 创建答案数组
 			let answer_arr =[];
-			let temp = [1,2,3,4,5,6,7,8,9,10];
+			let temp = [1,2,3,4,5,6];
 			// 随机排序
-			let explain_arr = ["定义 section 或 page 的页眉。<br/>",
-			"定义 section 或 page 的页脚。<br/>",
-			"定义文档的主要内容。<br/>",
-			"定义文档中的节（section、区段）。<br/>",
-			"定义文章。<br/>",
-			"定义页面内容之外的内容。<br/>",
-			"定义元素的细节。<br/>",
-			"定义对话框或窗口（浏览器默认情况下不支持）。<br/>",
-			"为 details 元素定义可见的标题。<br/>",
-			"添加给定内容的机器可读翻译。<br/>"];
+			let explain_arr = ["用于设定网页字符集，便于浏览器解析与渲染页面，content对应的值可以是“charset='utf-8'”。<br/>",
+			"用于告知浏览器以何种版本来渲染页面。content的值可以为'IE=edge,chrome=1'，该值表示指定IE和Chrome使用最新版本渲染当前页面。<br/>",
+			"指定浏览器如何缓存某个响应以及缓存多长时间。content的值在下个关说。<br/>",
+			"用于设定网页的到期时间，过期后网页必须到服务器上重新传输。content的值例如：Sunday 26 October 2016 01:00 GMT。<br/>",
+			"网页将在设定的时间内，自动刷新并调向设定的网址。content的值例如：2；URL=http://www.baidu.com/  。表示2s后自动跳转到百度页面。<br/>",
+			"如果网页过期。那么这个网页存在本地的cookies也会被自动删除。content的值例如：'User=Lxxyx; path=/; expires=Sunday, 10-Jan-16 10:00:00 GMT' 。<br/>"];
 			// 对数组随机排序的函数
 			function sortPlus (arr,arr2) {
 				for(let i = 0;i<arr.length;i++){
@@ -114,4 +110,3 @@
 		</script>
 	</body>
 </html>
-
